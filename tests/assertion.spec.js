@@ -2,7 +2,7 @@ import {test ,expect} from '@playwright/test'
 
 test('Assertion test',async({page})=>{
     await page.goto('https://kitchen.applitools.com/');
-    await page.pause();
+    // await page.pause();
     //Assertion
     //check element present or not 
     await expect(page.locator('text=The kitchen')).toHaveCount(1)
@@ -16,14 +16,14 @@ test('Assertion test',async({page})=>{
     await expect(page.locator('text=The kitchen')).toBeEnabled();
     await expect.soft(page.locator('text=The kitchen')).toBeDisabled();
     //check text content of element
-    await expect(page.locator('text=The kitchen')).toHaveText('The kitchen');
-    await expect.soft(page.locator('text=The kitchen')).toHaveText('The Kitchen');
+    await expect(page.locator('text=The kitchen')).toHaveText('The Kitchen');
+    await expect.soft(page.locator('text=The kitchen')).toHaveText('The kitchen1');
     //check element have attribute value or not
     await expect(page.locator('text=The kitchen')).toHaveAttribute('class','chakra-heading css-dpmy2a');
     await expect.soft(page.locator('text=The kitchen')).toHaveAttribute('class','title1');
     //check page url
     await expect(page).toHaveURL('https://kitchen.applitools.com/');
-    await expect(page).toHaveTitle('The kitchen');
+    await expect(page).toHaveTitle('The Kitchen');
     //take screenshot of the page
     await expect(page).toHaveScreenshot() 
 

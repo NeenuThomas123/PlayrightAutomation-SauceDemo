@@ -15,18 +15,18 @@ test("Demo login test2", async ({ page }) => {
   await page.goto(
     "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
   );
-  //   await page.pause();
+    // await page.pause();
   await page.getByRole("textbox", { name: "Username" }).click();
   await page.getByRole("textbox", { name: "Username" }).fill("Admin");
   await page.getByRole("textbox", { name: "Password" }).click();
   await page.getByRole("textbox", { name: "Password" }).fill("admin123");
   await page.getByRole("button", { name: "Login" }).click();
-  await page.getByText("aggalaadsf krishna").click();
-  await page.getByRole("menuitem", { name: "Logout" }).click();
+  await page.getByRole('listitem').filter({ hasText: 'uQeIqLnJEh user' }).locator('i').click();
+  await page.getByRole('menuitem', { name: 'Logout' }).click();
 });
 
-test.only("Demo login test3", async ({ page }) => {
-  await page.pause();
+test("Demo login test3", async ({ page }) => {
+  // await page.pause();
   await page.goto("https://admin-demo.nopcommerce.com/login");
   await page.getByRole("textbox", { name: "Email:" }).click();
   await page.getByRole("textbox", { name: "Email:" }).dblclick();
